@@ -55,7 +55,7 @@ Note: The amount parameter is passed in the lowest currency unit (cents) to prev
     "student_email": "sofiya@example.com"
   }
 ```
-}
+
 ## Response: Successful Payment from Stripe (200 OK)
 Upon successful processing, Stripe returns a unique transaction ID (id) which is stored in the CRM database for accounting purposes.
 
