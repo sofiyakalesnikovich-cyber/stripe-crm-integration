@@ -44,7 +44,7 @@ Request: CRM Backend to Stripe API (POST /v1/charges)
 When requesting a charge, the CRM sends the following payload.
 Note: The amount parameter is passed in the lowest currency unit (cents) to prevent floating-point rounding errors ($49.00 = 4900 cents).
 
-JSON
+```json
 {
   "amount": 4900,
   "currency": "usd",
@@ -54,11 +54,12 @@ JSON
     "order_id": "ORD-2026-9981",
     "student_email": "sofiya@example.com"
   }
+```
 }
 ## Response: Successful Payment from Stripe (200 OK)
 Upon successful processing, Stripe returns a unique transaction ID (id) which is stored in the CRM database for accounting purposes.
 
-JSON
+```json
 {
   "id": "ch_3M9x5bLkdIwHu7ix2",
   "object": "charge",
@@ -68,3 +69,4 @@ JSON
   "status": "succeeded",
   "receipt_url": "[https://stripe.com/receipt/acct_123](https://stripe.com/receipt/acct_123)"
 }
+```
