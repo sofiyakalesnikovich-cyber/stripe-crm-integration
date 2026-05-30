@@ -54,6 +54,7 @@ JSON
     "order_id": "ORD-2026-9981",
     "student_email": "sofiya@example.com"
   }
+}
 ## Response: Successful Payment from Stripe (200 OK)
 Upon successful processing, Stripe returns a unique transaction ID (id) which is stored in the CRM database for accounting purposes.
 
