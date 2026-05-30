@@ -31,9 +31,28 @@ sequenceDiagram
         Stripe-->>Backend: Returns 200 OK (Payment Intent ID, Success)
         Backend->>Backend: Updates student status to "Paid" in Database
         Backend-->>Frontend: Returns "Success" response
+{
+  "amount": 4900,
+  "currency": "usd",
+  "source": "tok_visa",
+  "description": "Payment for Analytics Course, Student ID 1054",
+  "metadata": {
+    "order_id": "ORD-2026-9981",
+    "student_email": "sofiya@example.com"
+  }
+}
         Frontend-->>Student: Displays "Payment Successful!" screen
     else Error (e.g., Insufficient Funds)
         Stripe-->>Backend: Returns 402 Payment Required (Error: Card Declined)
         Backend-->>Frontend: Relays payment error details
         Frontend-->>Student: Displays "Insufficient funds. Please try another card."
     end
+{
+  "id": "ch_3M9x5bLkdIwHu7ix2",
+  "object": "charge",
+  "amount": 4900,
+  "currency": "usd",
+  "paid": true,
+  "status": "succeeded",
+  "receipt_url": "[https://stripe.com/receipt/acct_123](https://stripe.com/receipt/acct_123)"
+}
