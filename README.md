@@ -37,6 +37,9 @@ sequenceDiagram
         Backend-->>Frontend: Relays payment error details
         Frontend-->>Student: Displays "Insufficient funds. Please try another card."
     end```
+
+---
+
 ## 3. API Specification (JSON Payloads)
 Request: CRM Backend to Stripe API (POST /v1/charges)
 When requesting a charge, the CRM sends the following payload.
